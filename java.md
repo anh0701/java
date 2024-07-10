@@ -254,10 +254,6 @@
 
 - Java compiled code(byte code) can run on all operating systems.
 
-    Java Source Code
-        &darr;
-    Java Compiler &rarr Java Bytecode
-
 ```mermaid
     flowchart TD
     A(Java Source Code) -->B[Java Compiler] --> C(Java Bytecode)
@@ -321,6 +317,78 @@ As JVM is not platform-independent because of which Java is not considered compl
 ### 9.7. methods overloading
 
 ## 10. Object-Oriented Programming
+
+```mermaid
+    mindmap
+    root(( OOP ))
+        (Principles)
+        (Class vs Object)
+        (How to write a Class)
+        (Constructor)
+        (Inheritance)
+            (Generalization vs Specialization)
+            (What's inheritance)
+            (Constructors in Inheritance)
+            (Super)
+            (Types of Inheritance)
+            (Method Overriding)
+            (Dynamic Method Dispatch)
+            (Polymorphism: Overloading and Overriding)
+        (Abstract Class)
+            (What's Abstract Class)
+            (Rules of Abstract Class)
+        (Interfaces)
+            (What are Interfaces)
+            (Example of Interface)
+            (Interface vs Multiple Inheritance)
+        (Inner Classes)
+        (Static Members and Blocks)
+        (Final Keyword)
+        (Exception Handling)
+            (What are Exceptions)
+            (How to Handle Exception)
+            (Try and Catch Block)
+            (Multiple & Nested Try Catch)
+            (Checked and Unchecked Exception)
+            (Throw vs Throws)
+            (Finally Block)
+```
+
+``` 
+    Object-Oriented Programming
+    |
+    ├── Principles
+    ├── Class vs Object
+    ├── How to write a Class
+    ├── Constructor
+    ├── Inheritance   
+    │   ├── Generalization vs Specialization
+    │   ├── What is inheritance 
+    │   ├── Constructors in Inheritance 
+    │   ├── Super  
+    │   ├── Types of Inheritance
+    │   ├── Method Overriding  
+    │   ├── Dynamic Method Dispatch   
+    │   └── Polymorphism: Overloading and Overriding
+    ├── Abstract Class     
+    |   ├── What is Abstract Class
+    |   └── Rules of Abstract Class
+    ├── Interfaces
+    │   ├── What are Interfaces
+    │   ├── Example of Interface
+    │   └── Interface vs Multiple Inheritance
+    ├── Inner Classes     
+    ├── Static Members and Blocks       
+    ├── Final Keyword             
+    └── Exception Handling
+       ├── What are Exceptions
+       ├── How to Handle Exception
+       ├── Try and Catch Block
+       ├── Multiple & Nested Try Catch
+       ├── Checked and Unchecked Exception
+       ├── Throw vs Throws
+       └── Finally Block
+```
 
 ### 10.1. Principles of OOP
 
