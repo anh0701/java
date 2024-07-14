@@ -17,6 +17,13 @@
   - [3.3. JVM Architecture](#33-jvm-architecture)
   - [3.4. Feature of Java](#34-feature-of-java)
 - [4. Operator and Expressions](#4-operator-and-expressions)
+  - [4.1. Arithmetic Operators](#41-arithmetic-operators)
+  - [4.3. Assignment Operator](#43-assignment-operator)
+  - [4.4. Relational Operators](#44-relational-operators)
+  - [4.5. Logical Operators](#45-logical-operators)
+  - [4.6. Ternary Operator](#46-ternary-operator)
+  - [4.7. Bitwise Operators](#47-bitwise-operators)
+  - [4.8. Shift Operators](#48-shift-operators)
 - [5. String Class](#5-string-class)
 - [6. Conditional Statements](#6-conditional-statements)
   - [6.1. if statement](#61-if-statement)
@@ -123,7 +130,7 @@
 
 - Non-Primitive Data Type or Object Data Type: String, Array, ...
 
-```
+```tree
     Data Types in Java
     |
     ├── Primitive Data Types    
@@ -186,30 +193,30 @@
   - instance variable
   - static variable
 
-    ```
-        Type of variable
-        |
-        ├── Local variables
-        |   ├── are created when the block is entered, or the function is called
-        |   ├── are destroyed after exiting from the block or when the call returns from the function.
-        |   ├── the scope of variables exists only within the block in which the variables are declared 
-        |   └── Initialization of the local variable is mandatory before using it in the defined scope
-        |
-        ├── Instance variables
-        |   ├── non-static variables, declared in a class outside of any method, constructor, block
-        |   ├── unlike local variable,we may use access specifiers for instance variables, if do not specify any access specifier, then the default access specifier will be used
-        |   ├── Initialization of an instance variable is not mandatory, default value: String is null, float is 0.0f, int is 0, Integer is null, etc.
-        |   ├── can be accessed only by creating objects
-        |   └── initialize instance variables using constructors while creating an object, or use instance blocks to initialize the instance variables
-        |
-        └── Static variables (also known as class variables)
-            ├── declared similarly to instance variables, difference: declared using the static keyword within a class outside of any method, constructor, or block.
-            ├── unlike instance variable, we can only have one copy of a static variable per class, irrespective of how many object we create
-            ├── created at the start of program execution and destroyed automatically when execution ends.
-            ├── Initialization of a static variable is like instance variable
-            ├── access a static variable like an instance variable(through an object)
-            ├── cannot be declared locally inside an instance method.
-            └── Static blocks can be used to initialize static variables.
+    ```tree
+      Type of variable
+      |
+      ├── Local variables
+      |   ├── are created when the block is entered, or the function is called
+      |   ├── are destroyed after exiting from the block or when the call returns from the function.
+      |   ├── the scope of variables exists only within the block in which the variables are declared 
+      |   └── Initialization of the local variable is mandatory before using it in the defined scope
+      |
+      ├── Instance variables
+      |   ├── non-static variables, declared in a class outside of any method, constructor, block
+      |   ├── unlike local variable,we may use access specifiers for instance variables, if do not specify any access specifier, then the default access specifier will be used
+      |   ├── Initialization of an instance variable is not mandatory, default value: String is null, float is 0.0f, int is 0, Integer is null, etc.
+      |   ├── can be accessed only by creating objects
+      |   └── initialize instance variables using constructors while creating an object, or use instance blocks to initialize the instance variables
+      |
+      └── Static variables (also known as class variables)
+          ├── declared similarly to instance variables, difference: declared using the static keyword within a class outside of any method, constructor, or block.
+          ├── unlike instance variable, we can only have one copy of a static variable per class, irrespective of how many object we create
+          ├── created at the start of program execution and destroyed automatically when execution ends.
+          ├── Initialization of a static variable is like instance variable
+          ├── access a static variable like an instance variable(through an object)
+          ├── cannot be declared locally inside an instance method.
+          └── Static blocks can be used to initialize static variables.
     ```
 
     ```java
@@ -260,13 +267,167 @@
     C --> D[Java interpreter]
     C --> E[Bytecode Compiler] --> G(Machine Code)
 ```
-As JVM is not platform-independent because of which Java is not considered completely platform-independent. 
+
+As JVM is not platform-independent because of which Java is not considered completely platform-independent.
 
 ### 3.3. JVM Architecture
 
+- JVM(Java Virtual Machine) acts as a run-time engine to run Java applications. JVM is the one that actually calls the main method present in a Java code. JVM is a part of JRE(Java Runtime Environment).
+- Java applications are called WORA (Write Once Run Anywhere). This is all possible because of JVM
+
+  ```mermaid
+  block-beta
+    columns 5
+    doc>"Class Loader"]:5
+    space space blockArrowId<[" "]>(y) space space
+
+  block:e:5
+          l["Method Area"]
+          h["Heep"]
+          jvm["JVM Language Stacks"]
+          pc["PC Registers"]
+          r["Native Method Stacks"]
+  end
+    blockArrowId1<[" "]>(y)  space space space space
+    ex space method
+    ex["Execution Engine"]  --> method["Native Method Interface"]
+    method["Native Method Interface"] --> ex["Execution Engine"] 
+    method space nt
+    method["Native Method Interface"] --> nt["Native Method Libraries"]
+    nt["Native Method Libraries"] --> method["Native Method Interface"]
+
+    style e stroke-width:10px
+  ```
+  
 ### 3.4. Feature of Java
 
 ## 4. Operator and Expressions
+
+### 4.1. Arithmetic Operators
+
+|  Operators | Result  |
+|:---:|---|
+| +  | Addition of two numbers  |
+| -  | Subtraction of two numbers  |
+| *  | Multiplication of two numbers  |
+| /  | Division of two numbers  |
+| %  | (Modulus Operator) Divides two numbers and returns the remainder |
+
+### 4.3. Assignment Operator
+
+- Operator 1: Unary minus (-)
+
+  ```java
+    - (operand)
+      int a = -10;
+  ```
+
+- Operator 2: 'NOT' Operator (!)
+
+  ```java
+    !(operand)
+    boolean condition = !true;
+  ```
+
+- Operator 3: Increment (++)
+  
+  ```java
+    //- post-increment operator
+    num++;
+    //- pre-increment operator
+    ++num;
+  ```
+
+- Operator 4: Decrement (--)
+  
+  ```java
+    // post-decrement operator
+    num--;
+    // pre-decrement operator
+    --num;
+  ```
+
+- Operator 5: Bitwise Complement (~)
+
+  ```java
+    ~(operand)
+    int n = 6;
+    int m = ~n; 
+    // 6 = 0000 0110 -> 1111 1001
+    // 1111 1001 -> 0000 0110 + 1 -> 0000 0111 = -7  
+  ```
+
+### 4.4. Relational Operators
+
+  ```java
+    // syntax: variable1 relation_operator variable2
+  ```
+
+- Operator 1: "Equal to" operator (==)
+  
+    ```java
+      // syntax: var1 == var2
+      int var1 = 10;
+      int var2 = 6;
+      System.out.print((var1 == var2)); // false
+    ```
+
+- Operator 2: "Not equal to" operator (!=)
+  
+  ```java
+    // syntax: var1 != var2
+      int var1 = 10;
+      int var2 = 6;
+      System.out.print((var1 != var2)); // true
+  ```
+
+- Operator 3: "Greater than" operator (>)
+
+    ```java
+      // syntax: var1 > var2
+      int var1 = 10;
+      int var2 = 6;
+      System.out.print((var1 > var2)); // true
+    ```
+
+- Operator 4: "Less than" operator (<)
+  
+    ```java
+      // syntax: var1 < var2
+      int var1 = 10;
+      int var2 = 6;
+      System.out.print((var1 < var2)); // false
+    ```
+
+- Operator 5: Greater than or equal to (>=)
+
+  ```java
+    // syntax: var1 >= var2
+    int var1 = 10;
+    int var2 = 6;
+    int var3 = 6;
+    System.out.print((var1 >= var2)); // true
+    System.out.print((var2 >= var3)); // true
+  ```
+
+- Operator 6: Less than or equal to (<=)
+  
+  ```java
+    // syntax: var1 <= var2
+    int var1 = 10;
+    int var2 = 6;
+    int var3 = 6;
+    System.out.print((var1 <= var2)); // false
+    System.out.print((var2 <= var3)); // true
+  ```
+
+### 4.5. Logical Operators
+
+### 4.6. Ternary Operator
+
+### 4.7. Bitwise Operators
+
+### 4.8. Shift Operators
 
 ## 5. String Class
 
@@ -294,7 +455,7 @@ As JVM is not platform-independent because of which Java is not considered compl
 
 ## 8. Arrays
 
-### 8.1. Arrays class 
+### 8.1. Arrays class
 
 ### 8.2. 1D Array
 
@@ -354,7 +515,7 @@ As JVM is not platform-independent because of which Java is not considered compl
             (Finally Block)
 ```
 
-``` 
+```tree
     Object-Oriented Programming
     |
     ├── Principles
@@ -529,5 +690,3 @@ As JVM is not platform-independent because of which Java is not considered compl
 ### 15.3. DML (Data Manipulation Language) using JDBC
 
 ### 15.4. DDL (Data Definition Language) using JDBC
-
-
