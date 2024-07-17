@@ -423,11 +423,45 @@ As JVM is not platform-independent because of which Java is not considered compl
 
 ### 4.5. Logical Operators
 
+- AND Operator ( && ) – if( a && b ) [if true execute else don’t]
+- OR Operator ( || ) – if( a || b) [if one of them is true to execute else don’t]
+- NOT Operator ( ! ) – !(a < b) [returns false if a is smaller than b]
+
 ### 4.6. Ternary Operator
+
+  ```java
+    // syntax:
+    // variable = expression1 ? expression2: expression3
+    // if(expression1)
+    // {
+    //   variable = expression2;
+    // }
+    // else
+    // {
+    //   variable = expression3;
+    // }
+
+  ```
 
 ### 4.7. Bitwise Operators
 
+- bitwise or (|): if either of the bits is 1, it gives 1, else it shows 0.
+- bitwise and (&): if both bits are 1, it gives 1, else it shows 0.
+- bitwise xor (^): if corresponding bits are different, it gives 1, else it shows 0.
+- bitwise complement (~): all bits inverted, which means it makes every 0 to 1, and every 1 to 0. Compiler will give 2's complement of that number
+- bit-shift operators (shift operators)
+
+  - signed right shift operator (>>)
+  - unsigned right shift operator (>>>)
+  - left shift operator (<<)
+
 ### 4.8. Shift Operators
+
+| Name of operator              | Sign | Description |
+| :---------------- | :------: | ----: |
+| signed left shift       |   <<   | The left shift operator moves all bits by a given number of bits to the left. |
+| signed right shift           |   >>   | The right shift operator moves all bits by a given number of bits to the right. |
+| unsigned right shift | >>> | it is the same as the signed right shift, but the vacant leftmost position is filled with 0 instead of the sign bit. |
 
 ## 5. String Class
 
