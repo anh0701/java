@@ -470,7 +470,7 @@ As JVM is not platform-independent because of which Java is not considered compl
 ### 4.8. Shift Operators
 
 | Name of operator              | Sign | Description |
-| :---------------- | :------: | ----: |
+| :---------------- | :------: | :---- |
 | signed left shift       |   <<   | The left shift operator moves all bits by a given number of bits to the left. |
 | signed right shift           |   >>   | The right shift operator moves all bits by a given number of bits to the right. |
 | unsigned right shift | >>> | it is the same as the signed right shift, but the vacant leftmost position is filled with 0 instead of the sign bit. |
