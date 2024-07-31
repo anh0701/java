@@ -42,10 +42,12 @@
 <details>
     <summary>Sự khác nhau giữa UNIQUE và PRIMARY KEY constraints là gì? </summary>
 
-    |      SS         | UNIQUE    | PRIMARY KEY  |
-    | :-------------| :------:  | ----:        |
-    | số lượng trong 1 table    |    nhiều     | một    |
-    | mục đích sử dụng|    đảm bảo tính duy nhất | đảm bảo tính duy nhất và không được phép NULL |
+| SS         | UNIQUE         | PRIMARY KEY                      |
+| :----------- | :--------------: | -------------------------: |
+| số lượng trong 1 table | nhiều | một  |
+| mục đích sử dụng    | đảm bảo tính duy nhất   | đảm bảo tính duy nhất và không được phép NULL |
+    
+
 </details>
 
 <details>
