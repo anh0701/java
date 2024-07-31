@@ -3,6 +3,7 @@
 ## 1. Table of Contents
 
 <details>
+
 <summary>Expand contents</summary>
 
 - [1. Table of Contents](#1-table-of-contents)
