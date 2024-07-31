@@ -3,7 +3,6 @@
 ## 1. Table of Contents
 
 <details>
-
 <summary>Expand contents</summary>
 
 - [1. Table of Contents](#1-table-of-contents)
@@ -367,7 +366,11 @@ As JVM is not platform-independent because of which Java is not considered compl
 - Operator 1: "Equal to" operator (==)
   
     ```java
-      // syntax: var1 == var2
+      /** syntax: var1 == var2
+       * ! NOTE
+       * if variable is Object,
+       * using var1.equals(var2) instead.
+       */
       int var1 = 10;
       int var2 = 6;
       System.out.print((var1 == var2)); // false
@@ -376,10 +379,14 @@ As JVM is not platform-independent because of which Java is not considered compl
 - Operator 2: "Not equal to" operator (!=)
   
   ```java
-    // syntax: var1 != var2
-      int var1 = 10;
-      int var2 = 6;
-      System.out.print((var1 != var2)); // true
+    /** syntax: var1 != var2
+     * ! NOTE
+     * if variable is Object,
+     * using var1.equals(var2) instead.
+     */
+    int var1 = 10;
+    int var2 = 6;
+    System.out.print((var1 != var2)); // true
   ```
 
 - Operator 3: "Greater than" operator (>)
@@ -432,16 +439,20 @@ As JVM is not platform-independent because of which Java is not considered compl
 
   ```java
     // syntax:
-    // variable = expression1 ? expression2: expression3
-    // if(expression1)
-    // {
-    //   variable = expression2;
-    // }
-    // else
-    // {
-    //   variable = expression3;
-    // }
 
+    /** don't do this
+     * variable = expression1 ? expression2: expression3
+     */
+
+    // do this
+    if(expression1)
+    {
+        variable = expression2;
+    }
+    else
+    {
+        variable = expression3;
+    }
   ```
 
 ### 4.7. Bitwise Operators
@@ -459,7 +470,7 @@ As JVM is not platform-independent because of which Java is not considered compl
 ### 4.8. Shift Operators
 
 | Name of operator              | Sign | Description |
-| :---------------- | :------: | :---- |
+| :---------------- | :------: | ----: |
 | signed left shift       |   <<   | The left shift operator moves all bits by a given number of bits to the left. |
 | signed right shift           |   >>   | The right shift operator moves all bits by a given number of bits to the right. |
 | unsigned right shift | >>> | it is the same as the signed right shift, but the vacant leftmost position is filled with 0 instead of the sign bit. |
